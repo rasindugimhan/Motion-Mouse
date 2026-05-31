@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Sketch & Measurement</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">
+      <video id="webcam" autoplay playsinline></video>
+      <canvas id="output_canvas"></canvas>
+      
+      <div id="measurements-panel">
+        <h2>Body Measurements</h2>
+        <ul id="measurements-list">
+          <li>Waiting for human detection...</li>
+        </ul>
+        <h2 style="margin-top: 20px;">Hand Gestures</h2>
+        <ul id="gestures-list" class="stats-list">
+          <li>Waiting for hands...</li>
+        </ul>
+      </div>
+
+      <button id="enableWebcamButton" class="btn">
+        <span>Enable Webcam</span>
+      </button>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

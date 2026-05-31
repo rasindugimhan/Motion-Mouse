@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a; /* Sleek dark mode background */
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+#webcam {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio */
+  opacity: 0.25; /* Keep it subtle so the sketch pops */
+  z-index: 1;
+  transform: scaleX(-1); /* Mirror camera */
+}
+
+#output_canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  transform: scaleX(-1); /* Mirror to match camera */
+  pointer-events: none;
+}
+
+#measurements-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  min-width: 280px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+#measurements-panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #00e5ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#measurements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#measurements-list li {
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+#measurements-list li span:last-child {
+  font-weight: 700;
+  color: #ff007f;
+}
+
+.btn {
+  position: absolute;
+  z-index: 20;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #00e5ff 0%, #0077ff 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
